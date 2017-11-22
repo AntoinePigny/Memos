@@ -38,17 +38,17 @@ Installation en tant que composant local (recommandé sur une VM)
   ./composer.phar create-project --prefer-dist laravel/laravel blog
   ```
 
-/etc/apache2/sites-available
+
 Modification du vhost fichier .conf | cp 000-default.conf exemple.conf
 ----
-
-    <VirtualHost *:80>
+/etc/apache2/sites-available
+    <!-- <VirtualHost *:80>
       ServerName www.exemple.com
       DocumentRoot /var/www/html/exemple
       <Directory /var/www/html/exemple/public>
         AllowOverride All
       </Directory>
-    </VirtualHost>
+    </VirtualHost> -->
 
 ```bash
 sudo a2ensite exemple.conf
@@ -63,3 +63,24 @@ sudo a2enmod rewrite
 
 sudo service apache2 restart
 ```
+
+Problème de permission sur storage
+----
+
+Machine locale :
+  ```bash
+  chmod -R 777 ./storage
+  ```
+
+Laravel Configuration Minimale
+
+  ```bash
+  sudo nano .env
+
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD="0000"
+  ```
