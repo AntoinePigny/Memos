@@ -9,18 +9,21 @@ Pour installer LARAVEL
 
 Pour savoir quels modules sont disponibles dans son php
 ----
-  ``php-m``
+  ```shell
+  php-m
+  ```
 
 Install des differentes ext
 ----
 
-  ```sudo apt-get install php7.0-xml php7.0-mbstring php7.0-mysql```
+  ```shell
+  sudo apt-get install php7.0-xml php7.0-mbstring php7.0-mysql
+  ```
 
 Installation en tant que commande systeme
 ----
   https://getcomposer.org/download
-  ```
-  Shell
+  ```shell
   sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin
 
   composer create-project --prefer-dist laravel/laravel blog
@@ -29,8 +32,7 @@ Installation en tant que commande systeme
 Installation en tant que composant local (recommandé sur une VM)
 ----
   https://getcomposer.org/download
-  ```
-  Shell
+  ```shell
   sudo php composer-setup.php
 
   ./composer.phar create-project --prefer-dist laravel/laravel blog
@@ -48,8 +50,7 @@ Modification du vhost fichier .conf | cp 000-default.conf exemple.conf
       </Directory>
     </VirtualHost>
 
-```
-Shell
+```shell
 sudo a2ensite exemple.conf
 
 sudo service apache2 restart
@@ -57,8 +58,7 @@ sudo service apache2 restart
 
 Activation du module de réécriture d'url du serveur
 ----
-```
-Shell
+```shell
 sudo a2enmod rewrite
 
 sudo service apache2 restart
