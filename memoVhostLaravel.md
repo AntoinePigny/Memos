@@ -73,6 +73,7 @@ Machine locale :
   ```
 
 Laravel Configuration Minimale
+----
 
   ```bash
   sudo nano .env
@@ -84,3 +85,11 @@ Laravel Configuration Minimale
     DB_USERNAME=root
     DB_PASSWORD="0000"
   ```
+
+Laravel 5.5(docs)
+----
+
+https://laravel.com/api/5.5/Illuminate/Database/Schema/Blueprint.html
+Exemple sur l'api LARAVEL pour le Blueprint
+
+http://devdocs.io/
