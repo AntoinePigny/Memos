@@ -86,6 +86,13 @@ Laravel Configuration Minimale
     DB_PASSWORD="0000"
   ```
 
+QuickStart Authentification Enabler
+-----------------------------------
+
+    ```bash
+        php artisan make:auth
+    ```
+
 Laravel 5.5(docs)
 ----
 
