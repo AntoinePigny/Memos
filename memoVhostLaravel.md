@@ -22,8 +22,12 @@ Install des differentes ext
 
 Installation en tant que commande systeme
 ----
-  https://getcomposer.org/download
   ```bash
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  php composer-setup.php
+  sudo mv composer.phar /usr/local/bin/composer
+  php -r "unlink('composer-setup.php');"
+
   sudo php composer-setup.php --filename=composer --install-dir=/usr/local/bin
 
   composer create-project --prefer-dist laravel/laravel blog
@@ -63,6 +67,25 @@ sudo a2enmod rewrite
 
 sudo service apache2 restart
 ```
+Editer le fichier apache.conf et rajouter :
+
+```ruby
+<ifModule mod_rewrite.c>
+RewriteEngine On
+</ifModule>
+
+```
+Puis éditer le fichier site.conf et ajouter sous le repertoire de root
+
+```ruby
+<Directory /var/www/html>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+</Directory>
+```
+
 
 Problème de permission sur storage
 ----
@@ -85,13 +108,16 @@ Laravel Configuration Minimale
     DB_USERNAME=root
     DB_PASSWORD="0000"
   ```
+  
+Enable 
 
 QuickStart Authentification Enabler
------------------------------------
+----
 
-    ```bash
-        php artisan make:auth
-    ```
+```bash
+    php artisan make:auth
+
+```
 
 Laravel 5.5(docs)
 ----
